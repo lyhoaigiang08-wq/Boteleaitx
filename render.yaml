@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: telegram-taixiu-bot
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: API_URL
+        value: https://wtxmd52.tele68.com/v1/txmd5/sessions
+      - key: POLL_MS
+        value: "5000"
+      - key: HISTORY_SIZE
+        value: "100"
