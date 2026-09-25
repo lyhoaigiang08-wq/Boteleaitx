@@ -1,0 +1,17 @@
+{
+  "name": "telegram-taixiu-ai-bot",
+  "version": "2.0.0",
+  "description": "Telegram bot phân tích dữ liệu Tài Xỉu từ API bàn, tối ưu cho Render Background Worker.",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7",
+    "node-telegram-bot-api": "^0.66.0"
+  }
+}
