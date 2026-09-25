@@ -1,26 +1,30 @@
-require('dotenv').config();
-const axios = require('axios');
-const TelegramBot = require('node-telegram-bot-api');
+require("dotenv").config();
 
-const TOKEN = process.env.8717574767:AAHicQcRqa6ZK3ESyXJN6ZGTh6BKtzm7a88;
-const API_URL = process.env.API_URL || process.env.SOURCE_API || 'https://wtxmd52.tele68.com/v1/txmd5/sessions';
+const axios = require("axios");
+const TelegramBot = require("node-telegram-bot-api");
+
+const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+const API_URL =
+  process.env.API_URL ||
+  "https://wtxmd52.tele68.com/v1/txmd5/sessions";
+
 const POLL_MS = Math.max(2000, Number(process.env.POLL_MS || 5000));
 const HISTORY_SIZE = Math.max(30, Number(process.env.HISTORY_SIZE || 100));
 
-if (!TOKEN || TOKEN === '8717574767:AAHicQcRqa6ZK3ESyXJN6ZGTh6BKtzm7a88') {
-  console.error('ERROR: Thiếu TELEGRAM_BOT_TOKEN. Hãy thêm biến môi trường trên Render.');
+if (!TOKEN) {
+  console.error("ERROR: Thiếu TELEGRAM_BOT_TOKEN trong Render Environment.");
   process.exit(1);
 }
 
-// Telegram long polling phù hợp với Render Background Worker.
 const bot = new TelegramBot(TOKEN, {
   polling: {
     interval: 1000,
     autoStart: true,
-    params: { timeout: 25 }
+    params: {
+      timeout: 25
+    }
   }
 });
-
 const subscribers = new Set();
 let history = [];
 let lastSessionId = null;
