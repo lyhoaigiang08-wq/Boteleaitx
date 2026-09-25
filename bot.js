@@ -2,7 +2,7 @@ require('dotenv').config();
 const axios = require('axios');
 const TelegramBot = require('node-telegram-bot-api');
 
-const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+const TOKEN = process.env.8717574767:AAHicQcRqa6ZK3ESyXJN6ZGTh6BKtzm7a88;
 const API_URL = process.env.API_URL || process.env.SOURCE_API || 'https://wtxmd52.tele68.com/v1/txmd5/sessions';
 const POLL_MS = Math.max(2000, Number(process.env.POLL_MS || 5000));
 const HISTORY_SIZE = Math.max(30, Number(process.env.HISTORY_SIZE || 100));
