@@ -7,7 +7,7 @@ const API_URL = process.env.API_URL || process.env.SOURCE_API || 'https://wtxmd5
 const POLL_MS = Math.max(2000, Number(process.env.POLL_MS || 5000));
 const HISTORY_SIZE = Math.max(30, Number(process.env.HISTORY_SIZE || 100));
 
-if (!TOKEN || TOKEN === 'THAY_TOKEN_BOT_TELEGRAM') {
+if (!TOKEN || TOKEN === '8717574767:AAHicQcRqa6ZK3ESyXJN6ZGTh6BKtzm7a88') {
   console.error('ERROR: Thiếu TELEGRAM_BOT_TOKEN. Hãy thêm biến môi trường trên Render.');
   process.exit(1);
 }
